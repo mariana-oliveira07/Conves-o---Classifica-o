@@ -84,7 +84,7 @@ def escolha_unidade(opcao):
         return None
 
 def main():
-    temperaturas_convertidas = []
+    temperaturas = []
 
     while True:
         menu()
@@ -105,19 +105,19 @@ def main():
             if isinstance(resultado, str):
                 print(resultado) 
             else:
-                temperaturas_convertidas.append(resultado)
+                temperaturas.append(resultado)
                 print(f"Temperatura convertida: {resultado}")
         except ValueError:
             print("Entrada inválida. Digite um número para a temperatura.")
         except Exception as e:
             print(f"Erro: {e}")
 
-    if temperaturas_convertidas:
-        maior = max(temperaturas_convertidas)
-        menor = min(temperaturas_convertidas)
-        media = sum(temperaturas_convertidas) / len(temperaturas_convertidas)
+    if temperaturas:
+        maior = max(temperaturas)
+        menor = min(temperaturas)
+        media = sum(temperaturas) / len(temperaturas)
 
-        print("\nLista de temperaturas convertidas:", temperaturas_convertidas)
+        print("\nLista de temperaturas convertidas:", temperaturas)
         print(f"Maior temperatura convertida: {maior}")
         print(f"Menor temperatura convertida: {menor}")
         print(f"Média das temperaturas convertidas: {media:.2f}")
